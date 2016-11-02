@@ -149,6 +149,7 @@ def main():
             userList = createIntList(sentinel)
         
         # Otherwise, run the request test on the current list
+        # Print out the result of the test
         else:
             print("The list", userList, "is%s %s" % ("" if globals()[CORRESPONDING_ACTION[menuChoice]](userList)  else " not", CORRESPONDING_TEXT[menuChoice if menuChoice != 4 else menuChoice + ~~(not(globals()[CORRESPONDING_ACTION[4]](userList)))]))
         
@@ -158,7 +159,7 @@ def main():
         # Prompt the user again
         printMenu()
         menuChoice = getValidInt(1, len(MENU_OPTIONS))
-        
+    # Thank the user    
     print("Thank you for using the List Info Checker")
 main()
     
